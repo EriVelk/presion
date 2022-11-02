@@ -7,6 +7,7 @@ import com.veliz.presion.service.PresionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,6 +24,7 @@ import static com.veliz.presion.utils.Constants.PRESION_DELETED;
 import static com.veliz.presion.utils.Constants.ResponseConstant.SUCCESS;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping(value = "presion")
 public class PresionController {
     @Autowired
