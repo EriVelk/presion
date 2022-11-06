@@ -39,6 +39,7 @@ public class PresionServiceImpl implements PresionService {
             presionUpdated.setPresionSys(presionDTO.getPresionSys() == null ? presion.getPresionSys() : presionDTO.getPresionSys());
             presionUpdated.setPresionDia(presionDTO.getPresionDia() == null ? presion.getPresionDia() : presionDTO.getPresionDia());
             presionUpdated.setBrazo(presionDTO.getBrazo() == null ? presion.getBrazo() : presionDTO.getBrazo());
+            presionUpdated.setPulso(presionDTO.getPulso() == null ? presion.getPulso() : presionDTO.getPulso());
 
             return presionMapper.presionToPresionDTO(presionDAO.save(presionUpdated));
         }catch (Exception e){
