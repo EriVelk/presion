@@ -24,7 +24,7 @@ import static com.veliz.presion.utils.Constants.PRESION_DELETED;
 import static com.veliz.presion.utils.Constants.ResponseConstant.SUCCESS;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = {"http://localhost:3000", "https://presion-react.vercel.app/", "https://presion-react-git-master-erivelk.vercel.app/", "https://presion-react-erivelk.vercel.app/"})
 @RequestMapping(value = "presion")
 public class PresionController {
     @Autowired
