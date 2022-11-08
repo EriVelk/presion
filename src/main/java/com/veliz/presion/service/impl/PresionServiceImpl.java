@@ -76,4 +76,28 @@ public class PresionServiceImpl implements PresionService {
             return  false;
         }
     }
+    @Override
+    public List<PresionDTO> listPresionArm(String arm) {
+        try{
+            List<PresionDTO> list = presionMapper.presionListToPresionDTOList(presionDAO.findByBrazoEquals(arm));
+            return list;
+        }catch (Exception e){
+            return null;
+        }
+    }
+
+    @Override
+    public List<PresionDTO> listPresionDate(String date) {
+        try{
+            String dateTemp = date.replace("-", "/");
+            if(date.charAt(0) == '0'){
+                dateTemp = dateTemp.substring(1);
+            }
+            List<PresionDTO> list = presionMapper.presionListToPresionDTOList(presionDAO.findByFechaEquals(dateTemp));
+            System.out.println(list.size());
+            return list;
+        }catch (Exception e){
+            return null;
+        }
+    }
 }

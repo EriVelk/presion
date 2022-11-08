@@ -60,4 +60,16 @@ public class PresionController {
         ResponseDTO<PresionDTO> presionDTO = new ResponseDTO<>(SUCCESS.getDescription(), LocalDateTime.now().toString(), presionService.getPresion(id));
         return new ResponseEntity<>(presionDTO, HttpStatus.OK);
     }
+
+    @GetMapping(value = "/list/arm/{arm}")
+    public ResponseEntity<ResponseDTO<List<PresionDTO>>> listPresionArm(@NotNull @PathVariable String arm){
+        ResponseDTO<List<PresionDTO>> listResponseDTO = new ResponseDTO<>(SUCCESS.getDescription(), LocalDateTime.now().toString(), presionService.listPresionArm(arm));
+        return new ResponseEntity<>(listResponseDTO, HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/list/date/{date}")
+    public ResponseEntity<ResponseDTO<List<PresionDTO>>> listPresionDate(@NotNull @PathVariable String date){
+        ResponseDTO<List<PresionDTO>> listResponseDTO = new ResponseDTO<>(SUCCESS.getDescription(), LocalDateTime.now().toString(), presionService.listPresionDate(date));
+        return new ResponseEntity<>(listResponseDTO, HttpStatus.OK);
+    }
 }

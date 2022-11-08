@@ -10,4 +10,6 @@ public interface PresionService {
     PresionDTO getPresion(Long id);
     List<PresionDTO> listPresion();
     Boolean deletePresion(Long id);
+    List<PresionDTO> listPresionArm(String arm);
+    List<PresionDTO> listPresionDate(String date);
 }
