@@ -71,5 +71,6 @@ public class PresionController {
     public ResponseEntity<ResponseDTO<List<PresionDTO>>> listPresionDate(@NotNull @PathVariable String date){
         ResponseDTO<List<PresionDTO>> listResponseDTO = new ResponseDTO<>(SUCCESS.getDescription(), LocalDateTime.now().toString(), presionService.listPresionDate(date));
         return new ResponseEntity<>(listResponseDTO, HttpStatus.OK);
+
     }
 }
